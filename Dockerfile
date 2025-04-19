@@ -39,3 +39,5 @@ RUN chmod +x /opt/CTFd/docker-entrypoint.sh \
 USER 1001
 EXPOSE 8000
 ENTRYPOINT ["/opt/CTFd/docker-entrypoint.sh"]
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:$PORT CTFd:create_app()"]
+
